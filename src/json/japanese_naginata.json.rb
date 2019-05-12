@@ -32,6 +32,7 @@ ENG = 'lang2'.freeze
 # QWERTY配列
 class Qwerty
   def initialize
+    @name = "Qwerty"
     @lu = ['q', 'w', 'e', 'r', 't']
     @lm = ['a', 's', 'd', 'f', 'g']
     @ld = ['z', 'x', 'c', 'v', 'b']
@@ -44,13 +45,14 @@ class Qwerty
     @rsp = SPACEBAR
     @sp  = @rsp
   end
-  attr_reader :lu, :lm, :ld, :ru, :rm, :rd, :lsp, :rsp, :sp
+  attr_reader :lu, :lm, :ld, :ru, :rm, :rd, :lsp, :rsp, :sp, :name
 end
 
 ########################################
 # Dvorak配列
 class Dvorak
   def initialize
+    @name = "Dvorak"
     @lu = [QUOTE, COMMA, PERIOD, 'p', 'y']
     @lm = ['a', 'o', 'e', 'u', 'i']
     @ld = [SEMICOLON, 'q', 'j', 'k', 'x']
@@ -63,7 +65,7 @@ class Dvorak
     @rsp = SPACEBAR
     @sp  = @rsp
   end
-  attr_reader :lu, :lm, :ld, :ru, :rm, :rd, :lsp, :rsp, :sp
+  attr_reader :lu, :lm, :ld, :ru, :rm, :rd, :lsp, :rsp, :sp, :name
 end
 
 ########################################
@@ -326,10 +328,10 @@ def main
 
   now = Time.now.to_i
   puts JSON.pretty_generate(
-    'title' => 'Japanese NAGINATA STYLE (v11)',
+    'title' => "Japanese NAGINATA STYLE (v11) for #{k.name} layout",
     'rules' => [
       {
-        'description' => "Japanese NAGINATA STYLE (v11) Build #{now} ",
+        'description' => "Japanese NAGINATA STYLE (v11) for #{k.name} layout Build #{now} ",
         'manipulators' => [
           # 同時打鍵数の多いものから書く
           shiftkeydef(),#連続シフト用定義
