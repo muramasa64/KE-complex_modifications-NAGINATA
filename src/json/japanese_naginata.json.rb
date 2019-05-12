@@ -56,9 +56,7 @@ class Qwerty
     @rm = ['h', 'j', 'k', 'l', SEMICOLON]
     @rd = ['n', 'm', COMMA, PERIOD, SLASH]
 
-    @lsp = SPACEBAR
-    @rsp = SPACEBAR
-    @sp  = @rsp
+    @sp = SPACEBAR
   end
   attr_reader :lu, :lm, :ld, :ru, :rm, :rd, :lsp, :rsp, :sp, :name
 end
@@ -76,9 +74,7 @@ class Dvorak
     @rm = ['d', 'h', 't', 'n', 's']
     @rd = ['b', 'm', 'w', 'v', 'z']
 
-    @lsp = SPACEBAR
-    @rsp = SPACEBAR
-    @sp  = @rsp
+    @sp  = SPACEBAR
   end
   attr_reader :lu, :lm, :ld, :ru, :rm, :rd, :lsp, :rsp, :sp, :name
 end
