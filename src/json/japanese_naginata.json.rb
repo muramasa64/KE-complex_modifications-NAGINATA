@@ -33,9 +33,9 @@ ENG = 'lang2'.freeze
 class Qwerty
   def initialize
     @name = "Qwerty"
-    @lu = ['q', 'w', 'e', 'r', 't']
-    @lm = ['a', 's', 'd', 'f', 'g']
-    @ld = ['z', 'x', 'c', 'v', 'b']
+    @lu = ['q', 'w', 'e', 'r', 't'].reverse
+    @lm = ['a', 's', 'd', 'f', 'g'].reverse
+    @ld = ['z', 'x', 'c', 'v', 'b'].reverse
 
     @ru = ['y', 'u', 'i', 'o', 'p']
     @rm = ['h', 'j', 'k', 'l', SEMICOLON]
@@ -53,9 +53,9 @@ end
 class Dvorak
   def initialize
     @name = "Dvorak"
-    @lu = [QUOTE, COMMA, PERIOD, 'p', 'y']
-    @lm = ['a', 'o', 'e', 'u', 'i']
-    @ld = [SEMICOLON, 'q', 'j', 'k', 'x']
+    @lu = [QUOTE, COMMA, PERIOD, 'p', 'y'].reverse
+    @lm = ['a', 'o', 'e', 'u', 'i'].reverse
+    @ld = [SEMICOLON, 'q', 'j', 'k', 'x'].reverse
 
     @ru = ['f', 'g', 'c', 'r', 'l']
     @rm = ['d', 'h', 't', 'n', 's']
@@ -343,48 +343,48 @@ def main
           # ------------------------------
           # 3同時打鍵
           # 小書き： シフト半濁音同時押し
-          three_keys(k.sp, k.ld[3], k.rm[1], 'ぁ'),
-          three_keys(k.sp, k.ld[3], k.rm[2], 'ぃ'),
-          three_keys(k.sp, k.ld[3], k.rm[3], 'ぅ'),
-          three_keys(k.sp, k.ld[3], k.ru[4], 'ぇ'),
-          three_keys(k.sp, k.ld[3], k.rd[0], 'ぉ'),
-          three_keys(k.sp, k.ld[3], k.rm[4], 'ゃ'),
-          three_keys(k.sp, k.ld[3], k.ru[3], 'ゅ'),
-          three_keys(k.sp, k.ld[3], k.ru[2], 'ょ'),
-          three_keys(k.sp, k.ld[3], k.rm[0], 'ゎ'),
+          three_keys(k.sp, k.ld[1], k.rm[1], 'ぁ'),
+          three_keys(k.sp, k.ld[1], k.rm[2], 'ぃ'),
+          three_keys(k.sp, k.ld[1], k.rm[3], 'ぅ'),
+          three_keys(k.sp, k.ld[1], k.ru[4], 'ぇ'),
+          three_keys(k.sp, k.ld[1], k.rd[0], 'ぉ'),
+          three_keys(k.sp, k.ld[1], k.rm[4], 'ゃ'),
+          three_keys(k.sp, k.ld[1], k.ru[3], 'ゅ'),
+          three_keys(k.sp, k.ld[1], k.ru[2], 'ょ'),
+          three_keys(k.sp, k.ld[1], k.rm[0], 'ゎ'),
           # シフト「りゅ」のみ「てゅ」に定義
           three_keys(k.sp, k.lu[2], k.ru[3],'てゅ'),
-          three_keys(k.lm[1], k.rm[1], k.rm[4], 'ぎゃ'),
-          three_keys(k.lu[3], k.rm[1], k.rm[4], 'じゃ'),
-          three_keys(k.lm[4], k.rm[1], k.rm[4], 'ぢゃ'),
-          three_keys(k.ld[1], k.rm[1], k.rm[4], 'びゃ'),
-          three_keys(k.lm[1], k.rm[1], k.ru[3], 'ぎゅ'),
-          three_keys(k.lu[3], k.rm[1], k.ru[3], 'じゅ'),
-          three_keys(k.lm[4], k.rm[1], k.ru[3], 'ぢゅ'),
-          three_keys(k.ld[1], k.rm[1], k.ru[3], 'びゅ'),
-          three_keys(k.lm[1], k.rm[1], k.ru[2], 'ぎょ'),
-          three_keys(k.lu[3], k.rm[1], k.ru[2], 'じょ'),
-          three_keys(k.lm[4], k.rm[1], k.ru[2], 'ぢょ'),
-          three_keys(k.ld[1], k.rm[1], k.ru[2], 'びょ'),
+          three_keys(k.lm[3], k.rm[1], k.rm[4], 'ぎゃ'),
+          three_keys(k.lu[1], k.rm[1], k.rm[4], 'じゃ'),
+          three_keys(k.lm[0], k.rm[1], k.rm[4], 'ぢゃ'),
+          three_keys(k.ld[3], k.rm[1], k.rm[4], 'びゃ'),
+          three_keys(k.lm[3], k.rm[1], k.ru[3], 'ぎゅ'),
+          three_keys(k.lu[1], k.rm[1], k.ru[3], 'じゅ'),
+          three_keys(k.lm[0], k.rm[1], k.ru[3], 'ぢゅ'),
+          three_keys(k.ld[3], k.rm[1], k.ru[3], 'びゅ'),
+          three_keys(k.lm[3], k.rm[1], k.ru[2], 'ぎょ'),
+          three_keys(k.lu[1], k.rm[1], k.ru[2], 'じょ'),
+          three_keys(k.lm[0], k.rm[1], k.ru[2], 'ぢょ'),
+          three_keys(k.ld[3], k.rm[1], k.ru[2], 'びょ'),
           # じゅぎゅが打ちにくいので、例外的に半濁音キーでもオーケーとする
-          three_keys(k.lu[3], k.rd[1], k.ru[2], 'じょ'),
-          three_keys(k.lu[3], k.rd[1], k.rm[4], 'じゃ'),
-          three_keys(k.lu[3], k.rd[1], k.ru[3], 'じゅ'),
-          three_keys(k.lm[1], k.rd[1], k.ru[2], 'ぎょ'),
-          three_keys(k.lm[1], k.rd[1], k.rm[4], 'ぎゃ'),
-          three_keys(k.lm[1], k.rd[1], k.ru[3], 'ぎゅ'),
-          three_keys(k.lm[4], k.rd[1], k.ru[2], 'ぢょ'),
-          three_keys(k.lm[4], k.rd[1], k.rm[4], 'ぢゃ'),
-          three_keys(k.lm[4], k.rd[1], k.ru[3], 'ぢゅ'),
-          three_keys(k.ld[1], k.rm[1], k.ru[2], 'びょ'),
-          three_keys(k.ld[1], k.rm[1], k.ru[3], 'びゅ'),
+          three_keys(k.lu[1], k.rd[1], k.ru[2], 'じょ'),
+          three_keys(k.lu[1], k.rd[1], k.rm[4], 'じゃ'),
+          three_keys(k.lu[1], k.rd[1], k.ru[3], 'じゅ'),
+          three_keys(k.lm[3], k.rd[1], k.ru[2], 'ぎょ'),
+          three_keys(k.lm[3], k.rd[1], k.rm[4], 'ぎゃ'),
+          three_keys(k.lm[3], k.rd[1], k.ru[3], 'ぎゅ'),
+          three_keys(k.lm[0], k.rd[1], k.ru[2], 'ぢょ'),
+          three_keys(k.lm[0], k.rd[1], k.rm[4], 'ぢゃ'),
+          three_keys(k.lm[0], k.rd[1], k.ru[3], 'ぢゅ'),
+          three_keys(k.ld[3], k.rm[1], k.ru[2], 'びょ'),
+          three_keys(k.ld[3], k.rm[1], k.ru[3], 'びゅ'),
           # 半濁音ゃゅょは「ぴ」のみ
-          three_keys(k.ld[1], k.rd[1], k.ru[2], 'ぴょ'),
-          three_keys(k.ld[1], k.rd[1], k.rm[4], 'ぴゃ'),
-          three_keys(k.ld[1], k.rd[1], k.ru[3], 'ぴゅ'),
+          three_keys(k.ld[3], k.rd[1], k.ru[2], 'ぴょ'),
+          three_keys(k.ld[3], k.rd[1], k.rm[4], 'ぴゃ'),
+          three_keys(k.ld[3], k.rd[1], k.ru[3], 'ぴゅ'),
           three_keys(k.lu[2], k.rm[1], k.ru[3], 'でゅ'),
-          three_keys(k.lu[3], k.rm[1], k.ru[4], 'じぇ'),
-          three_keys(k.lm[4], k.rm[1], k.ru[4], 'ぢぇ'),
+          three_keys(k.lu[1], k.rm[1], k.ru[4], 'じぇ'),
+          three_keys(k.lm[0], k.rm[1], k.ru[4], 'ぢぇ'),
           three_keys(k.lu[2], k.rm[1], k.rm[2], 'でぃ'),
           three_keys(k.lm[2], k.rm[1], k.rm[3], 'どぅ'),
           #ツァ行は「う」「つ」が同じキーにあるためシフトを押しながら
@@ -395,91 +395,91 @@ def main
           # ------------------------------
           # 2同時打鍵
           # 右手濁点
-          two_keys(k.ru[1], k.lm[3], 'ざ'),
-          two_keys(k.ru[3], k.lm[3], 'ず'),
-          two_keys(k.ru[4], k.lm[3], 'べ'),
-          two_keys(k.rm[0], k.lm[3], 'ぐ'),
-          two_keys(k.rm[3], k.lm[3], 'づ'),
-          two_keys(k.rd[0], k.lm[3], 'だ'),
-          two_keys(k.rd[3], k.lm[3], 'ぶ'),
+          two_keys(k.ru[1], k.lm[1], 'ざ'),
+          two_keys(k.ru[3], k.lm[1], 'ず'),
+          two_keys(k.ru[4], k.lm[1], 'べ'),
+          two_keys(k.rm[0], k.lm[1], 'ぐ'),
+          two_keys(k.rm[3], k.lm[1], 'づ'),
+          two_keys(k.rd[0], k.lm[1], 'だ'),
+          two_keys(k.rd[3], k.lm[1], 'ぶ'),
 
           # 左手濁点
-          two_keys(k.lm[1], k.rm[1], 'ぎ'),
+          two_keys(k.lm[3], k.rm[1], 'ぎ'),
           two_keys(k.lu[2], k.rm[1], 'で'),
-          two_keys(k.lu[3], k.rm[1], 'じ'),
-          two_keys(k.ld[0], k.rm[1], 'ぼ'),
+          two_keys(k.lu[1], k.rm[1], 'じ'),
+          two_keys(k.ld[4], k.rm[1], 'ぼ'),
           two_keys(k.ld[2], k.rm[1], 'げ'),
           two_keys(k.lm[2], k.rm[1], 'ど'),
-          two_keys(k.lm[3], k.rm[1], 'が'),
-          two_keys(k.lm[4], k.rm[1], 'ぢ'),
-          two_keys(k.lm[0], k.rm[1], 'ぜ'),
-          two_keys(k.ld[1], k.rm[1], 'び'),
-          two_keys(k.lu[1], k.rm[1], 'ば'),
-          two_keys(k.ld[3], k.rm[1], 'ご'),
-          two_keys(k.ld[4], k.rm[1], 'ぞ'),
+          two_keys(k.lm[1], k.rm[1], 'が'),
+          two_keys(k.lm[0], k.rm[1], 'ぢ'),
+          two_keys(k.lm[4], k.rm[1], 'ぜ'),
+          two_keys(k.ld[3], k.rm[1], 'び'),
+          two_keys(k.lu[3], k.rm[1], 'ば'),
+          two_keys(k.ld[1], k.rm[1], 'ご'),
+          two_keys(k.ld[0], k.rm[1], 'ぞ'),
 
           # 右手半濁音
-          two_keys(k.ru[4], k.ld[3],'ぺ'),
-          two_keys(k.rd[3], k.ld[3],'ぷ'),
+          two_keys(k.ru[4], k.ld[1],'ぺ'),
+          two_keys(k.rd[3], k.ld[1],'ぷ'),
 
           # 左手半濁音
-          two_keys(k.ld[0], k.rd[1], 'ぽ'),
-          two_keys(k.ld[1], k.rd[1], 'ぴ'),
-          two_keys(k.lu[1], k.rd[1], 'ぱ'),
+          two_keys(k.ld[4], k.rd[1], 'ぽ'),
+          two_keys(k.ld[3], k.rd[1], 'ぴ'),
+          two_keys(k.lu[3], k.rd[1], 'ぱ'),
 
           # 拗音シフト やゆよと同時押しで、ゃゅょが付く
 
-          two_keys(k.lm[1], k.rm[4], 'きゃ'),
+          two_keys(k.lm[3], k.rm[4], 'きゃ'),
           two_keys(k.lu[2], k.rm[4], 'りゃ'),
-          two_keys(k.lu[3], k.rm[4], 'しゃ'),
-          two_keys(k.lu[1], k.rm[4], 'みゃ'),
+          two_keys(k.lu[1], k.rm[4], 'しゃ'),
+          two_keys(k.lu[3], k.rm[4], 'みゃ'),
           two_keys(k.lm[2], k.rm[4], 'にゃ'),
-          two_keys(k.lm[4], k.rm[4], 'ちゃ'),
-          two_keys(k.ld[1], k.rm[4], 'ひゃ'),
+          two_keys(k.lm[0], k.rm[4], 'ちゃ'),
+          two_keys(k.ld[3], k.rm[4], 'ひゃ'),
 
-          two_keys(k.lm[1], k.ru[3], 'きゅ'),
+          two_keys(k.lm[3], k.ru[3], 'きゅ'),
           two_keys(k.lu[2], k.ru[3], 'りゅ'),
-          two_keys(k.lu[3], k.ru[3], 'しゅ'),
-          two_keys(k.lu[1], k.ru[3], 'みゅ'),
+          two_keys(k.lu[1], k.ru[3], 'しゅ'),
+          two_keys(k.lu[3], k.ru[3], 'みゅ'),
           two_keys(k.lm[2], k.ru[3], 'にゅ'),
-          two_keys(k.lm[4], k.ru[3], 'ちゅ'),
-          two_keys(k.ld[1], k.ru[3], 'ひゅ'),
+          two_keys(k.lm[0], k.ru[3], 'ちゅ'),
+          two_keys(k.ld[3], k.ru[3], 'ひゅ'),
 
-          two_keys(k.lm[1], k.ru[2], 'きょ'),
+          two_keys(k.lm[3], k.ru[2], 'きょ'),
           two_keys(k.lu[2], k.ru[2], 'りょ'),
-          two_keys(k.lu[3], k.ru[2], 'しょ'),
+          two_keys(k.lu[1], k.ru[2], 'しょ'),
           two_keys(k.lm[2], k.ru[2], 'にょ'),
-          two_keys(k.lm[4], k.ru[2], 'ちょ'),
-          two_keys(k.ld[1], k.ru[2], 'ひょ'),
+          two_keys(k.lm[0], k.ru[2], 'ちょ'),
+          two_keys(k.ld[3], k.ru[2], 'ひょ'),
 
-          two_keys(k.lu[1], k.ru[2], 'みょ'),
-          two_keys(k.lu[1], k.rm[4], 'みゃ'),
-          two_keys(k.lu[1], k.ru[3], 'みゅ'),
+          two_keys(k.lu[3], k.ru[2], 'みょ'),
+          two_keys(k.lu[3], k.rm[4], 'みゃ'),
+          two_keys(k.lu[3], k.ru[3], 'みゅ'),
 
-          two_keys(k.lu[3], k.ru[2], 'しょ'),
-          two_keys(k.lu[3], k.rm[4], 'しゃ'),
-          two_keys(k.lu[3], k.ru[3], 'しゅ'),
-          two_keys(k.lm[1], k.ru[2], 'きょ'),
-          two_keys(k.lm[1], k.rm[4], 'きゃ'),
-          two_keys(k.lm[1], k.ru[3], 'きゅ'),
+          two_keys(k.lu[1], k.ru[2], 'しょ'),
+          two_keys(k.lu[1], k.rm[4], 'しゃ'),
+          two_keys(k.lu[1], k.ru[3], 'しゅ'),
+          two_keys(k.lm[3], k.ru[2], 'きょ'),
+          two_keys(k.lm[3], k.rm[4], 'きゃ'),
+          two_keys(k.lm[3], k.ru[3], 'きゅ'),
           two_keys(k.lm[2], k.ru[2], 'にょ'),
           two_keys(k.lm[2], k.rm[4], 'にゃ'),
           two_keys(k.lm[2], k.ru[3], 'にゅ'),
-          two_keys(k.lm[4], k.ru[2], 'ちょ'),
-          two_keys(k.lm[4], k.rm[4], 'ちゃ'),
-          two_keys(k.lm[4], k.ru[3], 'ちゅ'),
-          two_keys(k.ld[1], k.ru[2], 'ひょ'),
-          two_keys(k.ld[1], k.rm[4], 'ひゃ'),
-          two_keys(k.ld[1], k.ru[3], 'ひゅ'),
+          two_keys(k.lm[0], k.ru[2], 'ちょ'),
+          two_keys(k.lm[0], k.rm[4], 'ちゃ'),
+          two_keys(k.lm[0], k.ru[3], 'ちゅ'),
+          two_keys(k.ld[3], k.ru[2], 'ひょ'),
+          two_keys(k.ld[3], k.rm[4], 'ひゃ'),
+          two_keys(k.ld[3], k.ru[3], 'ひゅ'),
 
           # 外来音
           two_keys(k.lu[2], k.rm[2], 'てぃ'),
           two_keys(k.lm[2], k.rm[3], 'とぅ'),
-          two_keys(k.lu[0], k.ru[4], 'ヴぇ'),
-          two_keys(k.lu[0], k.rm[1], 'ヴぁ'),
-          two_keys(k.lu[0], k.rm[2], 'ヴぃ'),
-          two_keys(k.lu[0], k.rd[0], 'ヴぉ'),
-          two_keys(k.lu[0], k.ru[3], 'ヴゅ'),
+          two_keys(k.lu[4], k.ru[4], 'ヴぇ'),
+          two_keys(k.lu[4], k.rm[1], 'ヴぁ'),
+          two_keys(k.lu[4], k.rm[2], 'ヴぃ'),
+          two_keys(k.lu[4], k.rd[0], 'ヴぉ'),
+          two_keys(k.lu[4], k.ru[3], 'ヴゅ'),
 
           # 右手領域の同時押し外来音
           two_keys(k.rm[3], k.rm[1], 'うぁ'),
@@ -493,19 +493,19 @@ def main
           two_keys(k.rd[3], k.rd[0], 'ふぉ'),
           two_keys(k.rd[3], k.ru[3], 'ふゅ'),
 
-          two_keys(k.lu[3], k.ru[4], 'しぇ'),
-          two_keys(k.lm[4], k.ru[4], 'ちぇ'),
+          two_keys(k.lu[1], k.ru[4], 'しぇ'),
+          two_keys(k.lm[0], k.ru[4], 'ちぇ'),
 
           #特殊操作
-          two_keys(k.ld[3], k.rd[1], '改'),
+          two_keys(k.ld[1], k.rd[1], '改'),
           two_keys_always(k.rm[0], k.rm[1], '仮'),#USモードでも効く定義
-          two_keys(k.lm[3], k.lm[4], '英'),
+          two_keys(k.lm[1], k.lm[0], '英'),
 
           # ------------------------------
           # シフト(スペースキー)
 
           #shift_key(k.lu[0], ''),
-          shift_key(k.lm[1], 'ね'),
+          shift_key(k.lm[3], 'ね'),
           shift_key(k.lu[2], 'り'),
           shift_key(k.rd[2], 'む'),
           #shift_key(k.lu[4], ''),
@@ -514,13 +514,13 @@ def main
           shift_key(k.ru[1], 'さ'),
           shift_key(k.ru[2], 'よ'),
           shift_key(k.ru[4], 'え'),
-          shift_key(k.lu[3], 'め'),
+          shift_key(k.lu[1], 'め'),
 
           #shift_key(k.ld[0], ''),
-          shift_key(k.lu[1], 'み'),
+          shift_key(k.lu[3], 'み'),
           shift_key(k.lm[2], 'に'),
-          shift_key(k.lm[3], 'ま'),
-          shift_key(k.lm[4], 'ち'),
+          shift_key(k.lm[1], 'ま'),
+          shift_key(k.lm[0], 'ち'),
 
           shift_key(k.rm[0], 'わ'),
           shift_key(k.rm[1], 'の'),
@@ -528,11 +528,11 @@ def main
           shift_key(k.rm[3], 'つ'),
           shift_key(k.rm[4], 'や'),
 
-          shift_key(k.lm[0], 'せ'),
+          shift_key(k.lm[4], 'せ'),
           #shift_key(k.ld[1], 'ひ'),
           shift_key(k.ld[2], 'を'),
-          shift_key(k.ld[3], '、'),
-          shift_key(k.ld[4], 'ぬ'),
+          shift_key(k.ld[1], '、'),
+          shift_key(k.ld[0], 'ぬ'),
 
           shift_key(k.rd[0], 'お'),
           shift_key(k.rd[1], '。改'),
@@ -544,7 +544,7 @@ def main
           # 連続シフトシフト(スペースキー)
 
           #continuous_shift(k.lu[0], ''),
-          continuous_shift(k.lm[1], 'ね'),
+          continuous_shift(k.lm[3], 'ね'),
           continuous_shift(k.lu[2], 'り'),
           continuous_shift(k.rd[2], 'む'),
           #continuous_shift(k.lu[4], ''),
@@ -553,13 +553,13 @@ def main
           continuous_shift(k.ru[1], 'さ'),
           continuous_shift(k.ru[2], 'よ'),
           continuous_shift(k.ru[4], 'え'),
-          continuous_shift(k.lu[3], 'め'),
+          continuous_shift(k.lu[1], 'め'),
 
           #continuous_shift(k.ld[1], ''),
-          continuous_shift(k.lu[1], 'み'),
+          continuous_shift(k.lu[3], 'み'),
           continuous_shift(k.lm[2], 'に'),
-          continuous_shift(k.lm[3], 'ま'),
-          continuous_shift(k.lm[4], 'ち'),
+          continuous_shift(k.lm[1], 'ま'),
+          continuous_shift(k.lm[0], 'ち'),
 
           continuous_shift(k.rm[0], 'わ'),
           continuous_shift(k.rm[1], 'の'),
@@ -567,11 +567,11 @@ def main
           continuous_shift(k.rm[3], 'つ'),
           continuous_shift(k.rm[4], 'や'),
 
-          continuous_shift(k.lm[0], 'せ'),
+          continuous_shift(k.lm[4], 'せ'),
           #continuous_shift(k.ld[0], ''),
           continuous_shift(k.ld[2], 'を'),
-          continuous_shift(k.ld[3], '、'),
-          continuous_shift(k.ld[4], 'ぬ'),
+          continuous_shift(k.ld[1], '、'),
+          continuous_shift(k.ld[0], 'ぬ'),
 
           continuous_shift(k.rd[0], 'お'),
           continuous_shift(k.rd[1], '。改'),
@@ -582,11 +582,11 @@ def main
           # ------------------------------
           # シフトなし(単打)
 
-          normal_key(k.lu[0], 'ヴ'),
-          normal_key(k.lm[1], 'き'),
+          normal_key(k.lu[4], 'ヴ'),
+          normal_key(k.lm[3], 'き'),
           normal_key(k.lu[2], 'て'),
-          normal_key(k.lu[3], 'し'),
-          normal_key(k.lu[4], '←'),
+          normal_key(k.lu[1], 'し'),
+          normal_key(k.lu[0], '←'),
 
           normal_key(k.ru[0], '→'),
           normal_key(k.ru[1], '削'),
@@ -594,11 +594,11 @@ def main
           normal_key(k.ru[3], 'す'),
           normal_key(k.ru[4], 'へ'),
 
-          normal_key(k.ld[0], 'ほ'),
+          normal_key(k.ld[4], 'ほ'),
           normal_key(k.ld[2], 'け'),
           normal_key(k.lm[2], 'と'),
-          normal_key(k.lm[3], 'か'),
-          normal_key(k.lm[4], 'っ'),
+          normal_key(k.lm[1], 'か'),
+          normal_key(k.lm[0], 'っ'),
 
           normal_key(k.rm[0], 'く'),
           normal_key(k.rm[1], 'あ'),
@@ -606,11 +606,11 @@ def main
           normal_key(k.rm[3], 'う'),
           normal_key(k.rm[4], 'ー'),
 
-          normal_key(k.lm[0], 'ろ'),
-          normal_key(k.ld[1], 'ひ'),
-          normal_key(k.lu[1], 'は'),
-          normal_key(k.ld[3], 'こ'),
-          normal_key(k.ld[4], 'そ'),
+          normal_key(k.lm[4], 'ろ'),
+          normal_key(k.ld[3], 'ひ'),
+          normal_key(k.lu[3], 'は'),
+          normal_key(k.ld[1], 'こ'),
+          normal_key(k.ld[0], 'そ'),
 
           normal_key(k.rd[0], 'た'),
           normal_key(k.rd[1], 'な'),
