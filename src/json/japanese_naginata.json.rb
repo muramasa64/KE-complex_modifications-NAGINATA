@@ -30,6 +30,21 @@ ENG = 'lang2'.freeze
 
 ########################################
 # QWERTY配列
+#
+# lu = 左上段（left up）
+# lm = 左中段（left middle）
+# ld = 左下段（left down）
+# ru = 右上段（right up）
+# rm = 右中段（right middle）
+# rd = 右下段（right down）
+#
+# 0 = 人差し指（伸ばし）
+# 1 = 人差し指
+# 2 = 中指
+# 3 = 薬指
+# 4 = 小指
+#
+# sp = スペース
 class Qwerty
   def initialize
     @name = "Qwerty"
