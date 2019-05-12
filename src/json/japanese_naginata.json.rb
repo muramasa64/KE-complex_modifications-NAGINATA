@@ -455,9 +455,6 @@ def main
           two_keys(k.lu[1], k.ru[2], 'みょ'),
           two_keys(k.lu[1], k.rm[4], 'みゃ'),
           two_keys(k.lu[1], k.ru[3], 'みゅ'),
-          two_keys(k.lu[2], k.ru[2], 'りょ'),
-          two_keys(k.lu[2], k.ru[3], 'りゅ'),
-          two_keys(k.lu[2], k.ru[2], 'りょ'),
 
           two_keys(k.lu[3], k.ru[2], 'しょ'),
           two_keys(k.lu[3], k.rm[4], 'しゃ'),
