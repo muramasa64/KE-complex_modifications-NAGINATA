@@ -137,7 +137,7 @@ def main
           three_keys(THUMB_RSHIFT,'k','d','ゎ'),
           # シフト「りゅ」のみ「てゅ」に定義
           three_keys(THUMB_LSHIFT, PERIOD,'r','てゅ'),
-          three_keys(THUMB_LSHIFT,'k','j','ぁ'),
+          three_keys(THUMB_LSHIFT,'v','j','ぁ'),
           three_keys(THUMB_LSHIFT,'k','t','ぃ'),
           three_keys(THUMB_LSHIFT,'k','n','ぅ'),
           three_keys(THUMB_LSHIFT,'k','l','ぇ'),
@@ -286,7 +286,7 @@ def main
           two_keys('i','l','ちぇ'),
           #特殊操作
           two_keys('k','m','改'),
-          two_keys_always('d','g','仮'),#USモードでも効く定義
+          two_keys_always('d','h','仮'),#USモードでも効く定義
           two_keys('u','i','英'),
           #Mac版のみの拡張
           two_keys('f','u','べ'),
