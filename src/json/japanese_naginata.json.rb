@@ -1075,4 +1075,6 @@ def editmode_one_right(key,char)
   }
 end
 
-main
+if __FILE__ == $PROGRAM_NAME
+  main
+end
