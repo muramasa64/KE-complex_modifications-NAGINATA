@@ -45,6 +45,8 @@ end
 
 # 特殊キー
 THUMB_SHIFT = 'lang9'
+THUMB_RSHIFT = 'lang9'
+THUMB_LSHIFT = 'lang8'
 
 def main
   now = Time.now.to_i
@@ -123,26 +125,38 @@ def main
           editmode_two_right('z','）改'),
           # 3同時打鍵
           # 小書き： シフト半濁音同時押し
-          three_keys(THUMB_SHIFT,'v','j','ぁ'),
-          three_keys(THUMB_SHIFT,'k','t','ぃ'),
-          three_keys(THUMB_SHIFT,'k','n','ぅ'),
-          three_keys(THUMB_SHIFT,'k','l','ぇ'),
-          three_keys(THUMB_SHIFT,'m','y','ぇ'),#Mac版のみの拡張
-          three_keys(THUMB_SHIFT,'k','b','ぉ'),
-          three_keys(THUMB_SHIFT,'k','s','ゃ'),
-          three_keys(THUMB_SHIFT,'k','r','ゅ'),
-          three_keys(THUMB_SHIFT,'k','c','ょ'),
-          three_keys(THUMB_SHIFT,'k','d','ゎ'),
+          three_keys(THUMB_RSHIFT,'v','j','ぁ'),
+          three_keys(THUMB_RSHIFT,'k','t','ぃ'),
+          three_keys(THUMB_RSHIFT,'k','n','ぅ'),
+          three_keys(THUMB_RSHIFT,'k','l','ぇ'),
+          three_keys(THUMB_RSHIFT,'m','y','ぇ'),#Mac版のみの拡張
+          three_keys(THUMB_RSHIFT,'k','b','ぉ'),
+          three_keys(THUMB_RSHIFT,'k','s','ゃ'),
+          three_keys(THUMB_RSHIFT,'k','r','ゅ'),
+          three_keys(THUMB_RSHIFT,'k','c','ょ'),
+          three_keys(THUMB_RSHIFT,'k','d','ゎ'),
           # シフト「りゅ」のみ「てゅ」に定義
-          three_keys(THUMB_SHIFT, PERIOD,'r','てゅ'),
+          three_keys(THUMB_LSHIFT, PERIOD,'r','てゅ'),
+          three_keys(THUMB_LSHIFT,'k','j','ぁ'),
+          three_keys(THUMB_LSHIFT,'k','t','ぃ'),
+          three_keys(THUMB_LSHIFT,'k','n','ぅ'),
+          three_keys(THUMB_LSHIFT,'k','l','ぇ'),
+          three_keys(THUMB_LSHIFT,'m','y','ぇ'),#Mac版のみの拡張
+          three_keys(THUMB_LSHIFT,'k','b','ぉ'),
+          three_keys(THUMB_LSHIFT,'k','s','ゃ'),
+          three_keys(THUMB_LSHIFT,'k','r','ゅ'),
+          three_keys(THUMB_LSHIFT,'k','c','ょ'),
+          three_keys(THUMB_LSHIFT,'k','d','ゎ'),
+          # シフト「りゅ」のみ「てゅ」に定義
+          three_keys(THUMB_LSHIFT, PERIOD,'r','てゅ'),
           three_keys('o','h','s','ぎゃ'),
           three_keys('p','h','s','じゃ'),
           three_keys('i','h','s','ぢゃ'),
           three_keys('q','h','s','びゃ'),
-          three_keys('o','h','o','ぎゅ'),
-          three_keys('p','h','o','じゅ'),
-          three_keys('i','h','o','ぢゅ'),
-          three_keys('q','h','o','びゅ'),
+          three_keys('o','h','r','ぎゅ'),
+          three_keys('p','h','r','じゅ'),
+          three_keys('i','h','r','ぢゅ'),
+          three_keys('q','h','r','びゅ'),
           three_keys('o','h','c','ぎょ'),
           three_keys('p','h','c','じょ'),
           three_keys('i','h','c','ぢょ'),
@@ -163,16 +177,20 @@ def main
           three_keys('q','m','c','ぴょ'),
           three_keys('q','m','s','ぴゃ'),
           three_keys('q','m','r','ぴゅ'),
-          three_keys('e','j','r','でゅ'),
-          three_keys('p','j','l','じぇ'),
-          three_keys('i','j','l','ぢぇ'),
-          three_keys(PERIOD,'j','t','でぃ'),
-          three_keys('e','j','n','どぅ'),
+          three_keys(PERIOD,'h','r','でゅ'),
+          three_keys('p','h','l','じぇ'),
+          three_keys('i','h','l','ぢぇ'),
+          three_keys(PERIOD,'h','t','でぃ'),
+          three_keys('e','h','n','どぅ'),
           #ツァ行は「う」「つ」が同じキーにあるためシフトを押しながら
-          three_keys(THUMB_SHIFT, 'n','h','つぁ'),
-          three_keys(THUMB_SHIFT, 'n','t','つぃ'),
-          three_keys(THUMB_SHIFT, 'n','l','つぇ'),
-          three_keys(THUMB_SHIFT, 'n','b','つぉ'),
+          three_keys(THUMB_RSHIFT, 'n','h','つぁ'),
+          three_keys(THUMB_RSHIFT, 'n','t','つぃ'),
+          three_keys(THUMB_RSHIFT, 'n','l','つぇ'),
+          three_keys(THUMB_RSHIFT, 'n','b','つぉ'),
+          three_keys(THUMB_LSHIFT, 'n','h','つぁ'),
+          three_keys(THUMB_LSHIFT, 'n','t','つぃ'),
+          three_keys(THUMB_LSHIFT, 'n','l','つぇ'),
+          three_keys(THUMB_LSHIFT, 'n','b','つぉ'),
           #Mac版のみの拡張
           three_keys('p','h','y','じぇ'),
           three_keys('i','h','y','ぢぇ'),
@@ -202,7 +220,7 @@ def main
           two_keys('x','h','ぞ'),
           # 右手半濁音
           two_keys('l','k','ぺ'),
-          two_keys('z','k','ぷ'),
+          two_keys('v','k','ぷ'),
           # 左手半濁音
           two_keys(SEMICOLON,'m','ぽ'),
           two_keys('q','m','ぴ'),
@@ -564,7 +582,7 @@ def editmode_two_left(key,char)
           'key_code' => 'm',
         },
         {
-          'key_code' => COMMA,
+          'key_code' => 'w',
         },
         {
           'key_code' => key,
@@ -582,10 +600,10 @@ def editmode_two_right(key,char)
     'from' => {
       'simultaneous' => [
         {
-          'key_code' => 'v',
+          'key_code' => 'k',
         },
         {
-          'key_code' => 'c',
+          'key_code' => 'j',
         },
         {
           'key_code' => key,
@@ -603,10 +621,10 @@ def editmode_one_left(key,char)
     'from' => {
       'simultaneous' => [
         {
-          'key_code' => 'j',
+          'key_code' => 'h',
         },
         {
-          'key_code' => 'k',
+          'key_code' => 't',
         },
         {
           'key_code' => key,
@@ -624,10 +642,10 @@ def editmode_one_right(key,char)
     'from' => {
       'simultaneous' => [
         {
-          'key_code' => 'd',
+          'key_code' => 'e',
         },
         {
-          'key_code' => 'f',
+          'key_code' => 'u',
         },
         {
           'key_code' => key,
